@@ -1,0 +1,73 @@
+{
+  "expo": {
+    "name": "RevealIt",
+    "slug": "revealit",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "revealit",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.revealit.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "RevealIt needs camera access to take before and after photos.",
+        "NSPhotoLibraryUsageDescription": "RevealIt needs photo library access to select before and after images.",
+        "NSPhotoLibraryAddUsageDescription": "RevealIt needs permission to save your comparison images to the photo library."
+      }
+    },
+    "android": {
+      "package": "com.revealit.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0D9488",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#0D9488",
+          "dark": {
+            "backgroundColor": "#0F0F0F"
+          }
+        }
+      ],
+      "expo-web-browser",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "RevealIt needs access to your photos to create before/after comparisons.",
+          "cameraPermission": "RevealIt needs camera access to take photos."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "RevealIt needs access to save your comparison images.",
+          "savePhotosPermission": "RevealIt needs permission to save images to your photo library."
+        }
+      ]
+    ],
+    "experiments": {
+      "reactCompiler": true
+    }
+  }
+}
